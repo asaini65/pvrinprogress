@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Shows</h1>
+
+<table>
+  <thead>
+    <tr> Show Name</tr>
+    <tr> Show Timing</tr>
+    <tr> Channel name</tr>
+    <tr> click to mark favorite </tr>
+  </thead>
+
+  <tbody>
+    <% @shows.each do |show| %>
+      <tr>
+        <td><%= show.show_name%></td>
+        <td><%= show.show_timing%></td>
+        <td><%= show.channels.first.name%></td>        
+        <td><%= check_box("tag", tag.id, :class => 'checkable') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
